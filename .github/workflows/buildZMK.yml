@@ -104,8 +104,8 @@ jobs:
           echo "----- ls /__w/zmk-config/zmk-config -----"
           ls /__w/zmk-config/zmk-config
           echo "------------------------------"
-          echo "------ cat /zmk/app/boards/arm/nrfmicro/Kconfig.defconfig ------"
-          cat /zmk/app/boards/arm/nrfmicro/Kconfig.defconfig
+          echo "------ cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig ------"
+          cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig
           echo "----------------------------------"
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
