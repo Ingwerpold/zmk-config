@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: apply Patch
         run: |
-          wget --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
+          curl -L https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch > 1.patch
           git apply 1.patch
       - name: Prepare variables
         id: variables
