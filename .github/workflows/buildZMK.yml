@@ -49,7 +49,9 @@ jobs:
       matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
       - name: apply Patch
-        run: git apply https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
+        run: |
+          wget --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
+          git apply 1.patch
       - name: Prepare variables
         id: variables
         run: |
