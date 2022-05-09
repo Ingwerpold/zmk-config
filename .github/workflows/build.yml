@@ -2,4 +2,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: /Ingwerpold/zmk-config/edit/master/.github/workflows/buildZMK.yml@main
+    uses: ./.github/workflows/buildZMK.yml
