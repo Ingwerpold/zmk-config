@@ -99,7 +99,9 @@ jobs:
         with:
           args: --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
       - name: apply Patch
-        run: cd zmk && git apply ../1.patch && cd ../    
+        run: |
+        cd zmk && git apply --reject --ignore-space-change --ignore-whitespace ../1.patch && cd ../
+        cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig.rej
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
