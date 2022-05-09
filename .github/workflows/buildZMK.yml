@@ -99,7 +99,7 @@ jobs:
         with:
           args: --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
       - name: apply Patch
-        run: cd zmk && git apply 1.patch && cd ../    
+        run: cd zmk && git apply ../1.patch && cd ../    
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
