@@ -94,14 +94,16 @@ jobs:
         run: west zephyr-export
       
 
-      - name: get Patch
-        uses: wei/wget@v1
-        with:
-          args: --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
+      #- name: get Patch
+      #  uses: wei/wget@v1
+      #  with:
+      #    args: --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
       - name: apply Patch
         run: |
-          cd zmk && git apply --reject --ignore-space-change --ignore-whitespace ../1.patch && cd ../
-          cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig.rej
+          cd zmk && git apply --reject --ignore-space-change --ignore-whitespace ../__w/zmk-config/zmk-config/diffToApply.diff && cd ../
+          ls /
+          ls /__w/zmk-config/
+          ls /__w/zmk-config/zmk-config
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
