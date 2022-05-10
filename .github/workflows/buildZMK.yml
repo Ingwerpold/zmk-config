@@ -108,7 +108,7 @@ jobs:
       #    cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig
       #    echo "----------------------------------"
       - name: pull for52833
-        run: git pull https://github.com/pashutk/zmk.git nrf52833
+        run: git pull https://github.com/pashutk/zmk.git nrf52833 --allow-unrelated-histories
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
