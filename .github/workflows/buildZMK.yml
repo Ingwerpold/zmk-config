@@ -98,15 +98,17 @@ jobs:
       #  uses: wei/wget@v1
       #  with:
       #    args: --output-document=1.patch https://patch-diff.githubusercontent.com/raw/zmkfirmware/zmk/pull/912.patch
-      - name: apply Patch
-        run: |
-          cd zmk && git apply --reject --ignore-space-change --ignore-whitespace /__w/zmk-config/zmk-config/diffToApply.diff && cd ../
-          echo "----- ls /__w/zmk-config/zmk-config -----"
-          ls /__w/zmk-config/zmk-config
-          echo "------------------------------"
-          echo "------ cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig ------"
-          cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig
-          echo "----------------------------------"
+      #- name: apply Patch
+      #  run: |
+      #    cd zmk && git apply --reject --ignore-space-change --ignore-whitespace /__w/zmk-config/zmk-config/diffToApply.diff && cd ../
+      #    echo "----- ls /__w/zmk-config/zmk-config -----"
+      #    ls /__w/zmk-config/zmk-config
+      #    echo "------------------------------"
+      #    echo "------ cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig ------"
+      #    cat zmk/app/boards/arm/nrfmicro/Kconfig.defconfig
+      #    echo "----------------------------------"
+      - name: pull for52833
+        run: git pull https://github.com/pashutk/zmk.git nrf52833
 
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
