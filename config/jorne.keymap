@@ -64,7 +64,7 @@
 //       | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR |
 //                          |     |     | GAM |   |     |     |     |
                         bindings = <
-   &reset &kp F1       &kp F1       &kp F1       &kp F1       &kp F1       &kp F1               &kp F1       &kp F1       &kp F1       &kp F1       &kp F1        &kp F1      &reset
+   &reset &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6               &kp F7       &kp F8       &kp F9       &kp F10       &kp F11        &kp F12      &reset
           &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
           &bootloader  &none        &none        &none        &none        &tog GAM              &none        &none        &none        &none        &none         &bootloader
                                                                     &trans &none &trans     &trans &none &trans
@@ -80,7 +80,7 @@
 &trans  &trans   &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans     &trans
         &trans   &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
         &trans   &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
-                                      &kp LALT &trans   &trans                 &trans     &trans     &trans
+                                      &kp LALT &kp SPACE   &kp 3                 &trans     &mo RSE     &mo LWR
                         >;
                 };
         };
