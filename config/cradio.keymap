@@ -9,9 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LEFT 1
-#define RIGHT 2
+#define LEFTL 1
+#define RIGHTL 2
 #define TRI 3
+#define GAMING
 
 
 &mt {
@@ -19,7 +20,7 @@
    // tapping_term_ms = <200>;
 };
 
-/ { 
+/ {
 
     behaviors {
         bhm: balanced_homerow_mods {
@@ -36,7 +37,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <LEFT RIGHT>;
+            if-layers = <LEFTL RIGHTL>;
             then-layer = <TRI>;
         };
     };
@@ -46,29 +47,34 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             bindings = <&kp ESC>;
         };
         
         combo_tab {
             timeout-ms = <50>;
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
         
         combo_bsp {
             timeout-ms = <50>;
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             key-positions = <17 16>;
             bindings = <&kp BSPC>;
         };
         
         combo_lalt {
             timeout-ms = <50>; 
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
         
         combo_lgui {
             timeout-ms = <50>;
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             key-positions = <12 13>;
             bindings = <&kp LGUI>;
         };
@@ -76,6 +82,7 @@
         
         combo_rgui {
             timeout-ms = <50>;
+            layer = <DEFAULT LEFTL RIGHTL TRI>
             key-positions = <17 18>;
             bindings = <&kp RGUI>;
         };
@@ -89,8 +96,8 @@
 		bindings = <
 		&kp Q &kp W &kp E &kp R &kp T 					                                        &kp Y &kp U  &kp I    &kp O   &kp P 
 		&bhm LGUI A &bhm LALT S &bhm LSHIFT D &bhm LCTRL F &kp G 			        	        &kp H &bhm RCTRL J &bhm RSHFT K &bhm RALT L &bhm RGUI QUOT
-		&mt LSFT Z &kp X &kp C &kp V &kp B				                                        &kp N &kp M  &kp CMMA &kp DOT &mt LSFT ESC
-          				                                    &kp SPC &mo LEFT  			 &kp RET &mo RIGHT 
+		&kp Z &kp X &kp C &kp V &kp B				                                        &kp N &kp M  &kp CMMA &kp DOT &kp SLASH
+          				                                    &kp SPC &mo LEFTL  			 &kp RET &mo RIGHTL
 		>;
 		};
 
@@ -102,12 +109,12 @@
 					                            &trans  &trans    &trans  &trans
 		>;
         };
-        
+
        	    right_layer {
 		bindings = <
 		&kp NUM_1  &kp NUM_2    &kp NUM_3  &kp NUM_4  &kp NUM_5                 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
 		&trans     &trans       &trans     &trans     &trans                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans 
-		&trans     &trans       &trans     &trans     &trans                    &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans 
+		&trans     &trans       &trans     &trans     &trans                    &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans
 					                                    &trans &trans 		&trans  &trans
 		>;
 		};
@@ -116,11 +123,20 @@
 		    tri_layer {
 		bindings = <
 		&kp F1      &kp F2    &kp F3      &kp F4    &kp F5 			           &kp F6       &kp F7        &kp F8        &kp F9     &kp F10
-		&kp F11     &kp F12   &trans      &trans    &trans  				   &trans       &kp PG_UP     &kp K_VOL_UP  &kp K_MUTE &trans 
+		&kp F11     &kp F12   &trans      &trans    &trans  				   &trans       &kp PG_UP     &kp K_VOL_UP  &kp K_MUTE &tog GAMING
 		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &trans    &bootloader                &bootloader  &kp PG_DN     &kp K_VOL_DN  &trans     &trans   
 					                                &trans &trans  					&trans &trans 
 		>;
 		};	
+
+        	gaming_layer {
+		bindings = <
+		&kp TAB   &kp Q &kp W &kp E &kp R                                              &kp T &kp Y &kp U  &kp I    &kp O 
+		&kp LCTRL &kp A &kp S &kp D &kp F                                              &kp G &kp H &kp J  &kp K    &kp L
+		&kp LSHFT &kp Z &kp X &kp C &kp V                                              &kp B &kp N &kp M  &kp CMMA &kp DOT
+          				                &kp SPC &kp N3  			 &kp LEFTL &mo RIGHTL
+		>;
+		};
         
 	};
 };
