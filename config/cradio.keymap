@@ -9,10 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LEFTL 1
-#define RIGHTL 2
-#define TRI 3
-#define GAMING 4
+#define GAMING 1
+#define LEFTL 2
+#define RIGHTL 3
+#define TRI 4
+
 
 
 &mt {
@@ -100,6 +101,15 @@
 		>;
 		};
 
+        	gaming_layer {
+		bindings = <
+		&kp TAB   &kp Q &kp W &kp E &kp R                                              &kp T &kp Y &kp U  &kp I    &kp O 
+		&kp LCTRL &kp A &kp S &kp D &kp F                                              &kp G &kp H &kp J  &kp K    &kp L
+		&kp LSHFT &kp Z &kp X &kp C &kp V                                              &kp B &kp N &kp M  &kp CMMA &kp DOT
+          				                &kp SPC &kp N3  			 &kp LEFTL &mo RIGHTL
+		>;
+		};
+
             left_layer {
 		bindings = <
 		&kp EXCL        &kp AT     &kp HASH     &kp DLLR            &kp PRCNT            &kp CARET    &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR 
@@ -128,14 +138,7 @@
 		>;
 		};	
 
-        	gaming_layer {
-		bindings = <
-		&kp TAB   &kp Q &kp W &kp E &kp R                                              &kp T &kp Y &kp U  &kp I    &kp O 
-		&kp LCTRL &kp A &kp S &kp D &kp F                                              &kp G &kp H &kp J  &kp K    &kp L
-		&kp LSHFT &kp Z &kp X &kp C &kp V                                              &kp B &kp N &kp M  &kp CMMA &kp DOT
-          				                &kp SPC &kp N3  			 &kp LEFTL &mo RIGHTL
-		>;
-		};
+        
         
 	};
 };
