@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define LEFT 1
-#define RIGHT 2
-#define TRI 3
+#define RIGHT 3
+#define TRI 2
 
 
 &mt {
@@ -35,8 +35,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <LEFT RIGHT>;
+            then-layer = <TRI>;
         };
     };
 
