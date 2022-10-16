@@ -47,34 +47,34 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             bindings = <&kp ESC>;
         };
         
         combo_tab {
             timeout-ms = <50>;
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
         
         combo_bsp {
             timeout-ms = <50>;
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             key-positions = <17 16>;
             bindings = <&kp BSPC>;
         };
         
         combo_lalt {
             timeout-ms = <50>; 
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
         
         combo_lgui {
             timeout-ms = <50>;
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             key-positions = <12 13>;
             bindings = <&kp LGUI>;
         };
@@ -82,7 +82,7 @@
         
         combo_rgui {
             timeout-ms = <50>;
-            layer = <DEFAULT LEFTL RIGHTL TRI>
+            layer = <DEFAULT LEFTL RIGHTL TRI>;
             key-positions = <17 18>;
             bindings = <&kp RGUI>;
         };
