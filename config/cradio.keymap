@@ -9,10 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define GAMING 1
-#define LEFTL 2
-#define RIGHTL 3
-#define TRI 4
+#define NOHOME 1
+#define GAMING 2
+#define LEFTL 3
+#define RIGHTL 4
+#define TRI 5
+
+#define NOGAMING <DEFAULT LEFTL RIGHTL TRI NOHOME>
 
 
 
@@ -48,41 +51,41 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             bindings = <&kp ESC>;
         };
         
         combo_tab {
             timeout-ms = <50>;
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
         
         combo_bsp {
             timeout-ms = <50>;
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             key-positions = <17 16>;
             bindings = <&kp BSPC>;
         };
         
         combo_lalt {
             timeout-ms = <50>; 
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
         
         combo_lgui {
             timeout-ms = <50>;
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             key-positions = <12 13>;
             bindings = <&kp LGUI>;
         };
         
         combo_rgui {
             timeout-ms = <50>;
-            layers = <DEFAULT LEFTL RIGHTL TRI>;
+            layers = NOGAMING;
             key-positions = <17 18>;
             bindings = <&kp RGUI>;
         };
@@ -98,6 +101,15 @@
 		&bhm LGUI A &bhm LALT S &bhm LSHIFT D &bhm LCTRL F &kp G 			        	        &kp H &bhm RCTRL J &bhm RSHFT K &bhm RALT L &bhm RGUI QUOT
 		&kp Z &kp X &kp C &kp V &kp B				                                            &kp N &kp M        &kp CMMA     &kp DOT     &kp SLASH
           				                                    &kp SPC &mo LEFTL  			 &kp RET &mo RIGHTL
+		>;
+		};
+
+            no_homerow_layer {
+		bindings = <
+		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans 
+		&kp A      &kp S        &kp D      &kp F      &trans                    &trans  &kp J   &kp K   &kp L  &kp QUOT 
+		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans
+					                                    &trans &trans 		&trans  &trans
 		>;
 		};
 
