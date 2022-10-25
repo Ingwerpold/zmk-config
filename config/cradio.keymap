@@ -108,7 +108,7 @@
         combo_gaming_esc {
             timeout-ms = <50>;
             layers = <GAMING>;
-            key-positions = <21 22>;
+            key-positions = <28 29>;
             bindings = <&kp ESC>;
         };
 
