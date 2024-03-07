@@ -167,8 +167,8 @@
 		    tri_layer {
 		bindings = <
 		&kp F1      &kp F2    &kp F3      &kp F4    &kp F5 			           &kp F6       &kp F7        &kp F8        &kp F9     &kp F10
-		&kp F11     &kp F12   &trans      &trans    &trans  				   &kp GRAVE    &kp PG_UP     &kp K_VOL_UP  &kp K_MUTE &tog GAMING
-		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &trans    &bootloader                &bootloader  &kp PG_DN     &kp K_VOL_DN  &trans     &tog NOHOME  
+		&kp F11     &kp F12   &trans      &trans    &trans  				   &kp GRAVE    &kp RA(RBKT)  &trans        &trans     &tog GAMING
+		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &trans    &bootloader                &bootloader  &trans        &trans        &trans     &tog NOHOME  
 					                                &trans &trans  					&trans &trans  
 		>;
 		};	
