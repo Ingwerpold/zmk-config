@@ -16,14 +16,23 @@
 #define LEFTL 3
 #define RIGHTL 4
 #define TRI 5
+#define TAIPO 6
 
 #define NOGAMING <DEFAULT LEFTL RIGHTL TRI NOHOME>
 
+#define COMBO_TIMEOUT 50
+#define TAIPO_TIMEOUT 70
+#define STICKY_TIMEOUT 500
 
 
 &mt {
   //  flavor = "tap-preferred";
    // tapping_term_ms = <200>;
+};
+
+&sk {
+    release-after-ms = <STICKY_TIMEOUT>;
+    quick-release;
 };
 
 / {
@@ -51,130 +60,118 @@
     combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <0 1>;
             layers = NOGAMING;
             bindings = <&kp ESC>;
         };
-        
         combo_tab {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
-        
         combo_bsp {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <17 16>;
             bindings = <&kp BSPC>;
         };
-        
         combo_lalt {
-            timeout-ms = <50>; 
+            timeout-ms = <COMBO_TIMEOUT>; 
             layers = NOGAMING;
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
-        
         combo_rgui {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <17 18>;
             bindings = <&kp RGUI>;
         };
-
         combo_stickyshift {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <20 21>;
             bindings = <&sk LSHFT>;
         };
-
         combo_capsword {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <21 22>;
             bindings = <&caps_word>;
         };
-
-
         combo_gaming_esc {
-            timeout-ms = <50>;
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = <GAMING>;
             key-positions = <28 29>;
             bindings = <&kp ESC>;
         };
-	
-	combo_osu_toggel {
-	    timeout-ms = <50>;
+    	combo_osu_toggel {
+            timeout-ms = <COMBO_TIMEOUT>;
             layers = NOGAMING;
             key-positions = <30 31>;
             bindings = <&tog NOHOME>;
-	};
-
+    	};
     };
 
-        keymap {
-                compatible = "zmk,keymap";
-                
-       		default_layer {
-		bindings = <
-		&kp Q &kp W &kp E &kp R &kp T 					                                        &kp Y &kp U        &kp I        &kp O       &kp P 
-		&bhm LGUI A &bhm LALT S &bhm LSHIFT D &bhm LCTRL F &kp G 			        	        &kp H &bhm RCTRL J &bhm RSHFT K &bhm LALT L &bhm RGUI SEMI
-		&kp Z &kp X &kp C &kp V &kp B				                                            &kp N &kp M        &kp CMMA     &kp DOT     &kp SLASH
-          				                                    &kp SPC &mo LEFTL  			 &kp RET &mo RIGHTL
-		>;
+    keymap {
+        compatible = "zmk,keymap";
+   		default_layer {
+    		bindings = <
+        		&kp Q &kp W &kp E &kp R &kp T 					                                        &kp Y &kp U        &kp I        &kp O       &kp P 
+        		&bhm LGUI A &bhm LALT S &bhm LSHIFT D &bhm LCTRL F &kp G 			        	        &kp H &bhm RCTRL J &bhm RSHFT K &bhm LALT L &bhm RGUI SEMI
+        		&kp Z &kp X &kp C &kp V &kp B				                                            &kp N &kp M        &kp CMMA     &kp DOT     &kp SLASH
+                  				                                    &kp SPC &mo LEFTL  			 &kp RET &mo RIGHTL
+    		>;
 		};
-
-            no_homerow_layer {
-		bindings = <
-		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans 
-		&kp A      &kp S        &kp D      &kp F      &trans                    &trans  &kp J   &kp K   &kp L  &kp QUOT 
-		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans
-					                                    &trans &trans 		&trans  &trans
-		>;
+        no_homerow_layer {
+    		bindings = <
+        		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans 
+        		&kp A      &kp S        &kp D      &kp F      &trans                    &trans  &kp J   &kp K   &kp L  &kp QUOT 
+        		&trans     &trans       &trans     &trans     &trans                    &trans  &trans  &trans  &trans &trans
+        					                                    &trans &trans 		&trans  &trans
+        	>;
 		};
-
-        	gaming_layer {
-		bindings = <
-		&kp TAB   &kp Q &kp W &kp E &kp R                                              &kp T &kp Y &kp U  &kp I    &kp O 
-		&kp LCTRL &kp A &kp S &kp D &kp F                                              &kp G &kp H &kp J  &kp K    &kp L
-		&kp LSHFT &kp Z &kp X &kp C &kp V                                              &kp B &kp N &kp M  &kp CMMA &kp DOT
-          				                &kp SPC &kp N3  			 &mo LEFTL &mo RIGHTL
-		>;
+    	gaming_layer {
+    		bindings = <
+        		&kp TAB   &kp Q &kp W &kp E &kp R                                              &kp T &kp Y &kp U  &kp I    &kp O 
+        		&kp LCTRL &kp A &kp S &kp D &kp F                                              &kp G &kp H &kp J  &kp K    &kp L
+        		&kp LSHFT &kp Z &kp X &kp C &kp V                                              &kp B &kp N &kp M  &kp CMMA &kp DOT
+                  				                &kp SPC &kp N3  			 &mo LEFTL &mo RIGHTL
+    		>;
 		};
-
-            left_layer {
-		bindings = <
-		&kp DE_EXCL  &kp DE_DQT  &kp DE_SECT  &kp DE_DLLR &kp DE_PRCNT         &kp DE_AMPS  &kp DE_FSLH      &kp DE_LPAR &kp DE_RPAR &kp DE_EQUAL
-		&kp DE_MINUS &kp DE_PLUS &kp DE_STAR  &kp DE_PIPE &kp DE_AT            &kp DE_SZ    &kp DE_A_UMLAUT  &kp DE_LBRC &kp DE_RBRC &kp DE_SQT
-        &kp DE_UNDER &kp DE_HASH &kp DE_GRAVE &kp DE_BSLH &kp DE_GT            &kp DE_QMARK &kp DE_U_UMLAUT  &kp DE_LBKT &kp DE_RBKT &kp DE_LT
-					                               &trans  &trans    &trans  &trans
-		>;
+        left_layer {
+    		bindings = <
+        		&kp DE_EXCL  &kp DE_DQT  &kp DE_SECT  &kp DE_DLLR &kp DE_PRCNT         &kp DE_AMPS  &kp DE_FSLH      &kp DE_LPAR &kp DE_RPAR &kp DE_EQUAL
+        		&kp DE_MINUS &kp DE_PLUS &kp DE_STAR  &kp DE_PIPE &kp DE_AT            &kp DE_SZ    &kp DE_A_UMLAUT  &kp DE_LBRC &kp DE_RBRC &kp DE_SQT
+                &kp DE_UNDER &kp DE_HASH &kp DE_GRAVE &kp DE_BSLH &kp DE_GT            &kp DE_QMARK &kp DE_U_UMLAUT  &kp DE_LBKT &kp DE_RBKT &kp DE_LT
+        					                               &trans  &trans    &trans  &trans
+        	>;
         };
-
-       	    right_layer {
-		bindings = <
-		&kp NUM_1  &kp NUM_2       &kp NUM_3        &kp NUM_4       &kp NUM_5                 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
-		&trans     &trans          &mmv MOVE_UP     &trans          &mkp LCLK                 &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans 
-		&trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT &mkp RCLK                 &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans
-            					                                    &trans &trans 		&trans  &trans
-		>;
+   	    right_layer {
+        	bindings = <
+        		&kp NUM_1  &kp NUM_2       &kp NUM_3        &kp NUM_4       &kp NUM_5                 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
+        		&trans     &trans          &mmv MOVE_UP     &trans          &mkp LCLK                 &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans 
+        		&trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT &mkp RCLK                 &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans
+                    					                                    &trans &trans 		&trans  &trans
+        	>;
+		};			
+	    tri_layer {
+        	bindings = <
+        		&kp F1      &kp F2    &kp F3      &kp F4    &kp F5 			           &kp F6       &kp F7        &kp F8        &kp F9     &kp F10
+        		&kp F11     &kp F12   &trans      &trans    &trans  				   &kp DE_CARET &kp DE_TILDE  &trans        &trans     &tog GAMING
+        		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &trans    &bootloader                &bootloader  &trans        &trans        &tog TAIPO &tog NOHOME  
+        					                                &trans &trans  					&trans &trans  
+    		>;
 		};
-			
-		
-		    tri_layer {
-		bindings = <
-		&kp F1      &kp F2    &kp F3      &kp F4    &kp F5 			           &kp F6       &kp F7        &kp F8        &kp F9     &kp F10
-		&kp F11     &kp F12   &trans      &trans    &trans  				   &kp DE_CARET &kp DE_TILDE  &trans        &trans     &tog GAMING
-		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &trans    &bootloader                &bootloader  &trans        &trans        &trans     &tog NOHOME  
-					                                &trans &trans  					&trans &trans  
-		>;
+	    taipo_layer {
+            bindings = <
+                &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                &none           &none            &none             &none            &none                 &none            &none            &none            &none            &tog TAIPO
+                                                                   &none            &none                 &none            &none
+            >;
 		};	
-
-        
-        
 	};
 };
