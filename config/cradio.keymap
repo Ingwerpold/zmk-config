@@ -16,10 +16,10 @@
 #define GAMING 2
 #define LEFTL 3
 #define RIGHTL 4
-#define TRI 5
+#define ADJUST 5
 #define TAIPO 6
 
-#define NOGAMING <DEFAULT LEFTL RIGHTL TRI NOHOME>
+#define NOGAMING <DEFAULT LEFTL RIGHTL ADJUST NOHOME>
 
 #define COMBO_TIMEOUT 50
 #define TAIPO_TIMEOUT 70
@@ -79,7 +79,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <LEFTL RIGHTL>;
-            then-layer = <TRI>;
+            then-layer = <ADJUST>;
         };
     };
 
