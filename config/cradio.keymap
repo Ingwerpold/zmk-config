@@ -26,6 +26,31 @@
 #define STICKY_TIMEOUT 500
 
 
+// LEFT SIDE
+#define TLI 3 // TOP
+#define TLM 2 // TOP
+#define TLR 1 // TOP
+#define TLP 0 // TOP
+#define BLI 13 // BOTTOM
+#define BLM 12 // BOTTOM
+#define BLR 11 // BOTTOM
+#define BLP 10 // BOTTOM
+#define LOT 31 // O-THUMB
+#define LIT 30 // I-THUMB
+
+// RIGHT SIDE
+#define TRI 6 // TOP
+#define TRM 7 // TOP
+#define TRR 8 // TOP
+#define TRP 9 // TOP
+#define BRI 16 // BOTTOM
+#define BRM 17 // BOTTOM
+#define BRR 18 // BOTTOM
+#define BRP 19 // BOTTOM
+#define ROT 32 // O-THUMB
+#define RIT 33 // I-THUMB
+
+
 &mt {
   //  flavor = "tap-preferred";
    // tapping_term_ms = <200>;
