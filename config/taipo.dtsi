@@ -102,7 +102,7 @@ TCOMBO(V,         &kp V,         &kp LS(V),    &kp DE_STAR,      &kp LC(V),    T
 TCOMBO(J,         &kp J,         &kp LS(J),    &kp DE_EQUAL,     &kp LC(Z),    TLM BLP,     TRM BRP)
 TCOMBO(M,         &kp M,         &kp LS(M),    &kp DE_DOLLAR,    &none,        TLP BLI,     TRP BRI)
 TCOMBO(W,         &kp W,         &kp LS(W),    &kp DE_AMPS,      &none,        TLI BLP,     TRI BRP)
-TCOMBO(SLASH,     &kp DE_LASH,   &kp BSLH,     &kp DE_PIPE,      &none,        TLR BLM,     TRR BRM)
+TCOMBO(SLASH,     &kp DE_SLASH,  &kp DE_BSLH,  &kp DE_PIPE,      &none,        TLR BLM,     TRR BRM)
 TCOMBO(MINUS,     &kp DE_MINUS,  &kp DE_UNDER, &kp DE_PRCNT,     &none,        TLM BLR,     TRM BRR)
 TCOMBO(QMARK,     &kp DE_QMARK,  &kp DE_EXCL,  &kp CAPS,         &none,        TLI BLM,     TRI BRM)
 TCOMBO(COMMA,     &kp DE_COMMA,  &kp DE_DOT,   &kp DE_TILDE,     &none,        TLM BLI,     TRM BRI)
